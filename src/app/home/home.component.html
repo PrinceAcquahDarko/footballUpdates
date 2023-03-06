@@ -1,0 +1,103 @@
+<div class="main">
+  <main>
+    <section class="section1">
+      <header>
+        <h2>football updates</h2>
+      </header>
+    </section>
+
+    <section>
+      <nav>
+        <ul>
+          <li
+            [ngClass]="{ selectedCountry: underline === 'england' }"
+            (click)="displayTable(39, 'england')"
+          >
+            England
+          </li>
+          <li
+            [ngClass]="{ selectedCountry: underline === 'spain' }"
+            (click)="displayTable(140, 'spain')"
+          >
+            Spain
+          </li>
+          <li
+            [ngClass]="{ selectedCountry: underline === 'germany' }"
+            (click)="displayTable(78, 'germany')"
+          >
+            Germany
+          </li>
+          <li
+            [ngClass]="{ selectedCountry: underline === 'france' }"
+            (click)="displayTable(61, 'france')"
+          >
+            France
+          </li>
+          <li
+            [ngClass]="{ selectedCountry: underline === 'italy' }"
+            (click)="displayTable(135, 'italy')"
+          >
+            Italy
+          </li>
+        </ul>
+      </nav>
+      <div *ngIf="standings && standings.length" class="example-container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Games</th>
+              <th scope="col">W</th>
+              <th scope="col">L</th>
+              <th scope="col">D</th>
+              <th scope="col">Goal Difference</th>
+              <th scope="col">Points</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let i of standings
+                  | paginate : { itemsPerPage: pageSize, currentPage: page };
+                let ins = index
+              "
+              [ngClass]="{'highlight': i.checked}"
+            >
+              <td scope="row">{{ (page - 1) * 10 + ins + 1 }}</td>
+              <td><img [src]="i.team.logo" alt="teamLogo" /></td>
+              <td  class="team_name">
+                {{ i.team.name }}
+              </td>
+              <td>{{ i.all.played }}</td>
+              <td>{{ i.all.win }}</td>
+              <td>{{ i.all.draw }}</td>
+              <td>{{ i.all.lose }}</td>
+              <td>{{ i.goalsDiff }}</td>
+              <td>{{ i.points }}</td>
+              <td>
+                <input
+                  [(ngModel)]="i.checked"
+                  type="checkbox"
+                  (change)="onChange($event, i.team)"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="bottom">
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+          <button (click)="routeToDetail()" class="btn btn-primary">Proceed</button>
+        </div>
+      </div>
+
+      <div class="overlay" *ngIf="show">
+        <div class="spinner-border text-primary">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
