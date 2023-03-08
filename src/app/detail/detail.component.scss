@@ -1,10 +1,9 @@
+
 main {
-  width: 90%;
-  display: flex;
-  gap: 40px;
+  width: 80%;
   margin: auto;
-  height: 100%;
-  // color:white;
+  padding-top: 2em;
+
 }
 
 .main {
@@ -16,93 +15,68 @@ main {
   min-height: 100vh;
 }
 
-section {
-  margin-top: 5em;
-  background-color: rgba(255, 255, 255, 0.8);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-
-.team{
-  cursor:pointer;
-  
-}
-.team:hover{
-    text-decoration: underline;
-  }
-.sidebar {
-  width: 20%;
-  // background-color: #fff;
-  padding: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  height: 30%
-}
-
-.team_name {
-  font-size: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.fixtures {
-  font-size: 18px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.team_name:hover {
-  text-decoration: underline;
-}
-
-.fixtures:hover {
-  text-decoration: underline;
-}
 
 .main_content {
-  width: 50%;
-  // background-color: #fff;
-  padding: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  // width:60;
+  // margin:auto;
+  // margin-top: 5em;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
+  padding-top:20px;
+  padding-bottom:10px;
 }
 
-.removeTeam{
-  cursor:pointer
+span{
+    margin-right: 20px;
 }
 
-.selectedTeams{
-  display:flex;
-  justify-content: space-between;
+div{
+    margin-left: 10px;
+    margin-bottom: 10px !important;
+    cursor:pointer
 }
 
-.smallImg{
+span:hover{
+    text-decoration: underline;
+}
+
+img{
     width:20px;
     height:20px;
 
 }
 
-.other_teams {
-  width: 25%;
-  height: 200px;
-  // background-color: #fff;
-  padding: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
+.selectedTeams{
+  display:flex;
+  justify-content: space-between;
+  gap:10px;
+}
 
-  div{
-    margin-left: 10px;
 
-    span{
-      margin-right: 20px;
-      margin-bottom:20px;
-    }
+.logo{
+    width: 10%;
+}
+
+.name{
+    width: 20%;
+}
+
+.dot{
+    width: 10%;
+}
+
+.goals{
+    width: 10%
+}
+
+.btnContainer{
+  margin-top:10px;
+  button{
+    width: 200px;
   }
 }
+
+
+

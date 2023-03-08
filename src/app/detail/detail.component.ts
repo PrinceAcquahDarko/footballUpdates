@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 import { AppService } from '../appService/app.service';
-import { team } from '../interface/interface';
+import { nextfive } from '../interface/interface';
 
 @Component({
   selector: 'app-detail',
@@ -9,43 +10,29 @@ import { team } from '../interface/interface';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  selectedTeams = this._as.selectedTeam;
-  current_team:team = this.selectedTeams[0];
+  lastTen: nextfive[] = [];
 
-  constructor(private _as: AppService, private _router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private _as: AppService,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
-    this._as.currentTeam = this.current_team;
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
+      console.log(params);
+      console.log(id);
+      this._as
+        .getLastTen(id)
+        .pipe(map((x) => x.response))
+        .subscribe((res) => {
+          this.lastTen = res;
+        });
+    });
   }
 
-  routeToTeamInfo() {
-    this._router.navigate(['detail/info']);
-  }
-
-  routeTonextFive() {
-    this._router.navigate(['detail/nextfive']);
-  }
-
-  setCurrentTeam(team: team) {
-    this.current_team = team;
-    this._as.currentTeam = team;
-    this._router.navigate(['detail']);
-  }
-
-  removeTeam(team: team) {
-    this.selectedTeams = this.selectedTeams.filter((x) => x.id !== team.id);
-    if (team.id === this.current_team.id) {
-      this.current_team = {
-        id: 0,
-        logo: '',
-        name: ''
-      };
-      this._as.currentTeam = null;
-      this._router.navigate(['detail']);
-    }
-  }
-
-  routeTolastFive() {
-    this._router.navigate(['detail/lastfive']);
+  routeToHome() {
+    this._router.navigate(['home']);
   }
 }

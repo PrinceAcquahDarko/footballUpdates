@@ -17,19 +17,19 @@ export class EventsComponent implements OnInit {
   
   ngOnInit(): void {
     console.log(this.events)
-    this.route.params.subscribe(params => {
-      const fixture = params['events'];
-      console.log(params)
-      console.log(fixture)
-      this._as.getEvents(fixture).pipe(
-        map(x => x.response)
-      ).subscribe(
-        res => {
-          this.events = res;
-        }
-      )
+    // this.route.params.subscribe(params => {
+    //   const fixture = params['events'];
+    //   console.log(params)
+    //   console.log(fixture)
+    //   this._as.getEvents(fixture).pipe(
+    //     map(x => x.response)
+    //   ).subscribe(
+    //     res => {
+    //       this.events = res;
+    //     }
+    //   )
       
-    })
+    // })
 
     this.route.queryParams.subscribe((params) => {
       this.data = JSON.parse(params['data']);

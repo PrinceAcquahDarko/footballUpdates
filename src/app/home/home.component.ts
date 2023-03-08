@@ -67,29 +67,9 @@ export class HomeComponent implements OnInit {
         }
       );
 
-    //get the standings for the current season
   }
-  routeToDetail() {
-    this._as.selectedTeam = this.selectedTeams;
-    this._router.navigate(['detail']);
+  routeToDetail(id:number) {
+    this._router.navigate(['detail', id]);
   }
 
-  onChange(event: Event, team: team) {
-    if ((<HTMLInputElement>event.target).checked) {
-      if (this.selectedTeams.length < 5) {
-        this.selectedTeams.push(team);
-      } else {
-        (<HTMLInputElement>event.target).checked = false;
-        let index = this.standings.findIndex(
-          (i: { team: { id: number } }) => i.team.id === team.id
-        );
-        if (index !== -1) {
-          this.standings[index].checked = false;
-        }
-        alert('youve reached your maximum limit');
-      }
-    } else {
-      this.selectedTeams = this.selectedTeams.filter((i) => i.id !== team.id);
-    }
-  }
 }

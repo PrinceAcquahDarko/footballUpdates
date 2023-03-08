@@ -9,27 +9,9 @@ import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: DetailComponent,
-    children: [
-      {
-        path: 'info',
-        component: InfoComponent,
-      },
-      {
-        path: 'nextfive',
-        component: NextfiveComponent,
-      },
-
-      {
-        path: 'lastfive',
-        component: LastfiveComponent,
-      },
-      {
-        path: 'lastfive/:events',
-        component: EventsComponent,
-      },
-    ],
+   
   },
 ];
 

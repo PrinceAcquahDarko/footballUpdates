@@ -17,25 +17,25 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.teamPlayers);
-    this._as
-      .getTeamInfo()
-      .pipe(map((x) => x.response[0]))
-      .subscribe((res) => {
-        this.teamInfo = res;
-      });
+    // this._as
+    //   .getTeamInfo()
+    //   .pipe(map((x) => x.response[0]))
+    //   .subscribe((res) => {
+    //     this.teamInfo = res;
+    //   });
 
-    this._as
-      .getPlayers()
-      .pipe(map((x) => x.response[0].players.slice(0, 20)))
-      .subscribe((res) => {
-        this.teamPlayers = res;
-      });
+    // this._as
+    //   .getPlayers()
+    //   .pipe(map((x) => x.response[0].players.slice(0, 20)))
+    //   .subscribe((res) => {
+    //     this.teamPlayers = res;
+    //   });
 
-    this._as
-      .getTeamCoach()
-      .pipe(map((x) => x.response[0]))
-      .subscribe((res) => {
-        this.coach = res.name;
-      });
+    // this._as
+    //   .getTeamCoach()
+    //   .pipe(map((x) => x.response[0]))
+    //   .subscribe((res) => {
+    //     this.coach = res.name;
+    //   });
   }
 }

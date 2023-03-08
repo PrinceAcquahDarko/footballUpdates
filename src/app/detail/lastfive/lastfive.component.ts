@@ -14,13 +14,7 @@ export class LastfiveComponent implements OnInit {
   constructor(private _as: AppService, private _router:Router) {}
 
   ngOnInit(): void {
-    console.log(this.lastfive);
-    this._as
-      .getLastfive()
-      .pipe(map((x) => x.response))
-      .subscribe((res) => {
-        this.lastfive = res;
-      });
+   
   }
 
   routeToEvents(game:nextfive) {

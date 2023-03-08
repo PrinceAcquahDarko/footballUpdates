@@ -14,11 +14,11 @@ export class NextfiveComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.nextfive);
-    this._as
-      .getNextfive()
-      .pipe(map((x) => x.response))
-      .subscribe((res) => {
-        this.nextfive = res;
-      });
+    // this._as
+    //   .getNextfive()
+    //   .pipe(map((x) => x.response))
+    //   .subscribe((res) => {
+    //     this.nextfive = res;
+    //   });
   }
 }
