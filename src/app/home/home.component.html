@@ -61,11 +61,11 @@
             <tr
               *ngFor="
                 let i of standings
-                  | paginate : { itemsPerPage: pageSize, currentPage: page };
+                 
                 let ins = index
               " (click)="routeToDetail(i.team.id)"
             >
-              <td scope="row">{{ (page - 1) * 10 + ins + 1 }}</td>
+              <td scope="row">{{ ins + 1 }}</td>
               <td><img [src]="i.team.logo" alt="teamLogo" /></td>
               <td  class="team_name">
                 {{ i.team.name }}
@@ -80,9 +80,9 @@
             </tr>
           </tbody>
         </table>
-        <div class="bottom">
+        <!-- <div class="bottom">
           <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
+        </div> -->
       </div>
 
       <div class="overlay" *ngIf="show">
