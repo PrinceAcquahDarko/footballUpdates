@@ -26,7 +26,6 @@ export class AppService {
       .pipe(catchError(this.handleError));
   }
 
-
   getCurrentSeason(id: number): Observable<allReponse> {
     let params = new HttpParams();
     params = params.append('id', id);
@@ -34,10 +33,6 @@ export class AppService {
       .get<allReponse>(this.url + `/leagues`, { params })
       .pipe(catchError(this.handleError));
   }
-
-
-
-
 
   getLastTen(id:number): Observable<getNextLastfive> {
     let params = new HttpParams();
@@ -48,9 +43,6 @@ export class AppService {
       .pipe(catchError(this.handleError));
   }
 
- 
-
- 
 
   handleError(err: HttpErrorResponse) {
     let message = '';
