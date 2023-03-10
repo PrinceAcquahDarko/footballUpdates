@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
-import { AppService } from 'src/app/appService/app.service';
-import { nextfive } from 'src/app/interface/interface';
+import { AppService } from '../../appService/app.service';
+import { nextfive } from '../../interface/interface';
 
 @Component({
   selector: 'app-lastfive',

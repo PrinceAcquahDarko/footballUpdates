@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { AppService } from 'src/app/appService/app.service';
-import { teamInfo } from 'src/app/interface/interface';
+import { AppService } from '../../appService/app.service';
+import { teamInfo } from '../../interface/interface';
 
 @Component({
   selector: 'app-info',
