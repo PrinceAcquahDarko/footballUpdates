@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailComponent } from './detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { InfoComponent } from './info/info.component';
+// import { InfoComponent } from './info/info.component';
 import { NextfiveComponent } from './nextfive/nextfive.component';
 import { LastfiveComponent } from './lastfive/lastfive.component';
 import { EventsComponent } from './events/events.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DetailComponent,
-    InfoComponent,
+    // InfoComponent,
     NextfiveComponent,
     LastfiveComponent,
     EventsComponent,
