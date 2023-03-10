@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { Location } from '@angular/common';
-import { AppService } from 'src/app/appService/app.service';
-import { events, nextfive } from 'src/app/interface/interface';
+import { AppService } from '../../appService/app.service';
+import { events, nextfive } from '../../interface/interface';
 
 @Component({
   selector: 'app-events',
